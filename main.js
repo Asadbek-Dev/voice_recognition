@@ -7,3 +7,6 @@ const recognition=new SpeechRecognition();
 recognition.onstart=function () {
     console.log('voice is actavated, you can to microphone');
 }
+btn.addEventListener('click',()=>{
+    recognition.start();
+})
