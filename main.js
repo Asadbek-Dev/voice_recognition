@@ -23,9 +23,11 @@ recognition.onresult = function(event){
     readOutLoud(transcript);
 }
 
+
 btn.addEventListener('click',()=>{
     recognition.start();
 })
+
 
 function readOutLoud(message){
     const speech = new SpeechSynthesisUtterance();
