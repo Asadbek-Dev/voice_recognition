@@ -1,6 +1,14 @@
 const btn=document.querySelector('.talk');
 const content=document.querySelector('.content');
 
+
+const greetings=[
+    'Im good little piece of love',
+    'Doing good homeboi',
+    'leave me alone'
+];
+const weather = ['Weather is fine','You need a tan']
+
 const SpeechRecognition=window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition=new SpeechRecognition();
 
@@ -21,7 +29,12 @@ btn.addEventListener('click',()=>{
 
 function readOutLoud(message){
     const speech = new SpeechSynthesisUtterance();
-    speech.text=message;
+    speech.text='i dont know what you said';
+    
+    if(message.includes('how are you')){
+        const finalText = greetings[Math.floor(Math.random()*greetings.length)];
+        speech.text = finalText;
+    }
     speech.volume=1;
     speech.rate=1;
     speech.pitch = 1;
