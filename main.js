@@ -16,6 +16,7 @@ recognition.onstart=function () {
     console.log('voice is actavated, you can to microphone');
 }
 
+
 recognition.onresult = function(event){
     const current = event.resultIndex;
     const transcript=event.results[current][0].transcript;
